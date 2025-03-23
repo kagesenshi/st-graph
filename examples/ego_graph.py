@@ -18,7 +18,7 @@ from operator import itemgetter
 
 # external dependencies
 import networkx as nx
-from streamlit_agraph import agraph, Node, Edge, Config
+from st_graph import agraph, Node, Edge, Config
 
 # First create a graph using the Barabasi-Albert model
 n = 2000

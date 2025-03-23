@@ -4,7 +4,7 @@ import pygraphviz as pgv
 import streamlit as st
 from sklearn import tree
 from sklearn.datasets import load_iris
-from streamlit_agraph import Config, Edge, Node, agraph
+from st_graph import Config, Edge, Node, agraph
 
 with st.spinner("Loading iris dataset"):
     iris = load_iris()

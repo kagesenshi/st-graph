@@ -1,0 +1,31 @@
+[project]
+name = "st-graph"
+version = "0.1.0"
+description="Interactive Graph Vis for Streamlit."
+readme = "README.md"
+authors = [
+    { name = "Izhar Firdaus", email = "kagesenshi.87@gmail.com" },
+    { name = "Christian Klose", email="chris.klose@gmx.net"}
+]
+license = { text = "MIT" }
+requires-python = ">=3.6"
+dependencies = [
+    "streamlit >= 0.63",
+    "networkx >= 2.5",
+    "rdflib >= 6.0.2",
+]
+
+[project.urls]
+Homepage = "https://github.com/kagesenshi/st-graph"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/st_graph"]
+include = ["src/st_graph/**/*"]
+
+[tool.hatch.build]
+include = ["src/st_graph/frontend/build/*"]
+

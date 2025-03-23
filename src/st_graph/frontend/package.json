@@ -1,5 +1,5 @@
 {
-  "name": "streamlit-agraph",
+  "name": "st-graph",
   "version": "1.0.1",
   "private": true,
   "scripts": {

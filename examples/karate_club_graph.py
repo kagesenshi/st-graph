@@ -6,7 +6,7 @@
 # streamlit run <path-to-script>.py
 
 import networkx as nx
-from streamlit_agraph import agraph, Node, Edge, Config
+from st_graph import agraph, Node, Edge, Config
 
 # Generate the networkx implementation of Zachary's Karate Club graph
 # (https://en.wikipedia.org/wiki/Zachary%27s_karate_club)

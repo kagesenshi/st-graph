@@ -1,6 +1,6 @@
 import networkx as nx
 from networkx.algorithms import community
-from streamlit_agraph.triplestore import TripleStore
+from st_graph.triplestore import TripleStore
 
 class GraphAlgos:
   def __init__(self, store:TripleStore):

@@ -6,27 +6,27 @@ from operator import itemgetter
 import streamlit.components.v1 as components
 import streamlit as st
 
-from streamlit_agraph import data
+from st_graph import data
 
-from streamlit_agraph.config import Config, ConfigBuilder
-from streamlit_agraph.triple import Triple
-from streamlit_agraph.node import Node
-from streamlit_agraph.edge import Edge
-from streamlit_agraph.triplestore import TripleStore
+from st_graph.config import Config, ConfigBuilder
+from st_graph.triple import Triple
+from st_graph.node import Node
+from st_graph.edge import Edge
+from st_graph.triplestore import TripleStore
 
 _RELEASE = True
 
 if _RELEASE:
     parent_dir = os.path.dirname(os.path.abspath(__file__))
     build_dir = os.path.join(parent_dir, "frontend/build")
-    _agraph = components.declare_component("agraph", path=build_dir)
+    _graph = components.declare_component("graph", path=build_dir)
 else:
-    _agraph = components.declare_component(
-        "agraph",
+    _graph = components.declare_component(
+        "graph",
         url="http://localhost:3001",
     )
       
-def agraph(nodes, edges, config):
+def st_graph(nodes, edges, config):
     node_ids = [node.id for node in nodes]
     if len(node_ids) > len(set(node_ids)):
         st.warning("Duplicated node IDs exist.")
@@ -35,7 +35,7 @@ def agraph(nodes, edges, config):
     config_json = json.dumps(config.__dict__)
     data = { "nodes": nodes_data, "edges": edges_data}
     data_json = json.dumps(data)
-    component_value = _agraph(data=data_json, config=config_json)
+    component_value = _graph(data=data_json, config=config_json)
     return component_value
 
 
@@ -61,7 +61,7 @@ if not _RELEASE:
     #                 **kwargs,
     #                 )
 
-    return_value = agraph(nodes, edges, config=config)
+    return_value = st_graph(nodes, edges, config=config)
 
 
     st.write(return_value)

@@ -1,8 +1,8 @@
 from typing import List, Set
-from streamlit_agraph.config import Config
-from streamlit_agraph.triple import Triple
-from streamlit_agraph.node import Node
-from streamlit_agraph.edge import Edge
+from st_graph.config import Config
+from st_graph.triple import Triple
+from st_graph.node import Node
+from st_graph.edge import Edge
 
 class TripleStore:
   def __init__(self) ->None:
